@@ -1,4 +1,4 @@
-const { constants } = require("../constanst")
+import constants from "../constanst.js";
 const errorHandler = (err, req, res, next) => {
     const status = req.status ? req.status : 500;
 
@@ -31,4 +31,4 @@ const errorHandler = (err, req, res, next) => {
 
 }
 
-module.exports = errorHandler
+export default errorHandler

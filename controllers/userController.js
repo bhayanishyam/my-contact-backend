@@ -1,7 +1,7 @@
-const asyncHandler = require("express-async-handler");
-const User = require("../models/userModel");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+import asyncHandler from "express-async-handler";
+import User from "../models/userModel.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 
 //@desc Register a new user
@@ -76,4 +76,4 @@ const currentUser = asyncHandler(async (req, res) => {
     res.status(200).json({ user: req.user });
 });
 
-module.exports = { registerUser, loginUser, logoutUser, currentUser }
+export { registerUser, loginUser, logoutUser, currentUser };

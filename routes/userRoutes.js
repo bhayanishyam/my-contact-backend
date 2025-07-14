@@ -1,6 +1,6 @@
-const express = require("express");
-const { registerUser, loginUser, logoutUser, currentUser } = require("../controllers/userController");
-const validateToken = require("../middleware/validateUserHandler");
+import express from "express";
+import { registerUser, loginUser, logoutUser, currentUser } from "../controllers/userController.js";
+import validateToken from "../middleware/validateUserHandler.js";
 // middleware
 
 const router = express.Router();
@@ -14,5 +14,4 @@ router.get("/current", validateToken, currentUser)
 
 router.post("/logout", logoutUser)
 
-module.exports = router
-
+export default router
