@@ -58,7 +58,7 @@ const loginUser = asyncHandler(async (req, res) => {
         res.status(401);
         throw new Error("email and password is not valid");
     }
-    res.status(200).json({ message: "logged in" });
+
 });
 
 //@desc logout
@@ -72,7 +72,6 @@ const logoutUser = asyncHandler(async (req, res) => {
 //@route post /api/user/current
 //@access private
 const currentUser = asyncHandler(async (req, res) => {
-
     res.status(200).json({ user: req.user });
 });
 

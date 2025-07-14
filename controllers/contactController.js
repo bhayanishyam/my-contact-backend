@@ -50,9 +50,12 @@ const createContact = asyncHandler(async (req, res) => {
         phone
     });
 
-    if (!contact) throw new Error("Contact not created");
+    if (!contact) {
+        throw new Error("Contact not created");
+    } else {
+        res.status(201).json({ message: `New Contact created.` })
+    }
 
-    res.status(201).json({ message: `New Contact created.` })
 });
 
 
@@ -84,8 +87,10 @@ const updateContact = asyncHandler(async (req, res) => {
     if (!updatedContact) {
         res.status(401);
         throw new Error("Not able to Update the contact.")
+    } else {
+
+        res.status(201).json({ message: `Contact Updated Successfully` });
     }
-    res.status(201).json({ message: `Contact Updated Successfully` });
 
 });
 
